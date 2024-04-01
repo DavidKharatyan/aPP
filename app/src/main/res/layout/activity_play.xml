@@ -93,7 +93,7 @@
             android:background="@drawable/background_btn_choose"
             android:fontFamily="@font/chakrapetchbold"
             android:onClick="ClickChoose"
-            android:text="choose 1"
+            android:text="option 1"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -105,7 +105,7 @@
             android:background="@drawable/background_btn_choose"
             android:fontFamily="@font/chakrapetchbold"
             android:onClick="ClickChoose"
-            android:text="choose 2"
+            android:text="option 2"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -117,7 +117,7 @@
             android:background="@drawable/background_btn_choose"
             android:fontFamily="@font/chakrapetchbold"
             android:onClick="ClickChoose"
-            android:text="choose 3"
+            android:text="option 3"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -129,7 +129,7 @@
             android:background="@drawable/background_btn_choose"
             android:fontFamily="@font/chakrapetchbold"
             android:onClick="ClickChoose"
-            android:text="choose 4"
+            android:text="option 4"
             android:textColor="@color/black"
             android:textSize="16sp" />
     </LinearLayout>

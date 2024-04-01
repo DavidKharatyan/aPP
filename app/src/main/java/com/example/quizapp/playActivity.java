@@ -11,18 +11,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class playActivity extends AppCompatActivity {
-    String[] question_list = {"Quel numéro est indissociable du footballeur Cristiano Ronaldo ?",
-            "D’où est originaire le footballeur portugais Cristiano Ronaldo ?","quel pays Cristiano Ronaldo n’a-t-il jamais été membre d’un club ?"
-            ,"Dans quel club de foot Cristiano Ronaldo est-il resté le plus longtemps en continu ?",
-           "Combien de Ligue des Champions Cristiano Ronaldo a-t-il remporté durant sa carrière madrilène de 2009 à 2018 ?"
+    String[] question_list = {"Задай мне пять сложных вопросов про Армению с вариантами ответов четырьмя вариантами ответов и с ответами",
+            "Кто был основателем древнейшей армянской династии?"
+            ,"Как называется столица Армении?",
+           "Какая горная система охватывает большую часть территории Армении?"
     };
-    String[] choose_list = {"3","7","14","19",
-            "porto","lisboone","madère","fato",
-            "italie","allemagne","espagne","angleterre",
-            "juventus","united","barcelone","madrid",
+    String[] choose_list = {"IV век н.э."," V век до н.э.","II век н.э."," VI век до н.э.",
+            " Тигран II Великий","Ардавазд I","Гаятон I","Харадзман I",
+            "Тбилиси","Ереван","Баку","Астрахань",
+            " Анкар"," Вишап","Эчмиадзин"," Хачкар",
             "1","2","4","5"
     };
-    String[] correct_list = {"7","madère","allemagne","madrid","4"};
+    String[] correct_list = {"V век н.э.","Гаятон I","Ереван","Хачкар","4"};
 
 
     TextView cpt_question , text_question;

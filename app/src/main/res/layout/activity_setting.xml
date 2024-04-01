@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color"
+    android:background="@color/black"
     tools:context=".settingActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="347dp"
+        android:layout_height="672dp"
+        android:textSize="39dp"
+        android:text="Это игра где вам задают вопросы про Армению и вы должны на них отвечать . Будет пять вопросов и четыре варианта ответов один из них правильный а три  неправильные .В соответствии от вашего выбора вы в конце получите баллы."
+        android:textColor="#F8F3F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

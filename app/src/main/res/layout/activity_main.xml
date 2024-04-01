@@ -4,19 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color"
+    android:background="@drawable/stock_vector_neon_quiz_sign_vector_design_template_quiz_neon_frame_light_banner_design_element_colorful_modern_1722883588"
     tools:context=".MainActivity">
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RANANGANAM"
-        android:textSize="35sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         android:fontFamily="@font/chakrapetchbold"
+        android:text="Question and Answer"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,55 +24,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <Button
             android:id="@+id/btn_play"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_btn"
-            android:textStyle="bold"
-            android:textColor="@color/primary_color"
+            android:background="@color/black"
+            android:backgroundTint="#03A9F4"
             android:fontFamily="@font/chakrapetchbold"
-            android:textSize="20sp"
-            android:padding="8dp"
             android:onClick="main_btn"
-            android:text="Play" />
+            android:padding="8dp"
+            android:text="Play"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/background_btn"
-            android:textStyle="bold"
-            android:textColor="@color/primary_color"
+            android:background="@color/black"
+            android:backgroundTint="#03A9F4"
             android:fontFamily="@font/chakrapetchbold"
-            android:textSize="20sp"
-            android:padding="8dp"
             android:onClick="main_btn"
+            android:padding="8dp"
+            android:text="What game is this"
+            android:textColor="@color/black"
 
-            android:text="Setting" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_exit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/background_btn"
-            android:textStyle="bold"
-            android:textColor="@color/primary_color"
+            android:background="@color/black"
+            android:backgroundTint="#03A9F4"
             android:fontFamily="@font/chakrapetchbold"
-            android:textSize="20sp"
             android:onClick="main_btn"
-
             android:padding="8dp"
-            android:text="exit" />
+            android:text="exit"
+
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
