@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/stock_vector_neon_quiz_sign_vector_design_template_quiz_neon_frame_light_banner_design_element_colorful_modern_1722883588"
+    android:background="@color/white"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/chakrapetchbold"
-        android:text="Question and Answer"
-        android:textColor="@color/white"
+        android:text="Вопрос и ответ"
+        android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +42,7 @@
             android:fontFamily="@font/chakrapetchbold"
             android:onClick="main_btn"
             android:padding="8dp"
-            android:text="Play"
+            android:text="Играть"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -56,9 +57,9 @@
             android:fontFamily="@font/chakrapetchbold"
             android:onClick="main_btn"
             android:padding="8dp"
-            android:text="What game is this"
-            android:textColor="@color/black"
+            android:text="Что за игра"
 
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -72,7 +73,7 @@
             android:fontFamily="@font/chakrapetchbold"
             android:onClick="main_btn"
             android:padding="8dp"
-            android:text="exit"
+            android:text="Выйти"
 
             android:textColor="@color/black"
             android:textSize="20sp"

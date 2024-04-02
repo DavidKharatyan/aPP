@@ -11,18 +11,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class playActivity extends AppCompatActivity {
-    String[] question_list = {"Задай мне пять сложных вопросов про Армению с вариантами ответов четырьмя вариантами ответов и с ответами",
+    String[] question_list = {"Когда произошло рождение христианства в Армении?",
             "Кто был основателем древнейшей армянской династии?"
             ,"Как называется столица Армении?",
-           "Какая горная система охватывает большую часть территории Армении?"
+           "Какая горная система охватывает большую часть территории Армении?",
+            "Какое событие привело к великой катастрофе армянского народа в начале XX века, известное как \"Армянский геноцид\"?",
+            "Кто был основателем армянского алфавита в V веке н.э.?",
+            "В каком году было провозглашено независимое государство Армения после развала Российской империи?",
+            "Какое событие привело к началу Нагорно-Карабахского конфликта в конце XX века?",
+            "Какое событие привело к завоеванию Завоевания Селевкидов армянским вождем Тиграном II в I веке до н.э.?",
+            "Когда была принята христианская религия как государственная религия в Армении?"
     };
     String[] choose_list = {"IV век н.э."," V век до н.э.","II век н.э."," VI век до н.э.",
             " Тигран II Великий","Ардавазд I","Гаятон I","Харадзман I",
             "Тбилиси","Ереван","Баку","Астрахань",
             " Анкар"," Вишап","Эчмиадзин"," Хачкар",
-            "1","2","4","5"
+            "Вторжение Сассанидов","Война за независимость","Массовые аресты армянских лидеров"," Политика истребления Османской империи",
+            "Гайус Юлий Ахиллес","Григорий Просвещенный","Месроп Маштоц","Константин Философ",
+            "1915"," 1918","1920","1923",
+           "Распад Советского Союза","Признание независимости Азербайджана","Армянское национальное восстание","Конфликт между армянами и азербайджанцами на границе",
+            "Вторжение римлян","Восстание рабов","Война с Парфянами","Падение македонской династии",
+            "301 год","451 год","632 год","825 год",
+            "1","2","4","5","6","7","8","9","10"
     };
-    String[] correct_list = {"V век н.э.","Гаятон I","Ереван","Хачкар","4"};
+    String[] correct_list = {"V век н.э.","Гаятон I","Ереван","Хачкар","Политика истребления Османской империи"," Месроп Маштоц"," 1918","Распад Советского Союза","Война с Парфянами","301 год","10"};
 
 
     TextView cpt_question , text_question;
@@ -57,11 +69,11 @@ public class playActivity extends AppCompatActivity {
                             isclickBtn = false;
 
                             if(!valueChoose.equals(correct_list[currentQuestion])){
-                                Toast.makeText(playActivity.this , "erreur",Toast.LENGTH_LONG).show();
+                                Toast.makeText(playActivity.this , "неправильно",Toast.LENGTH_LONG).show();
                                 btn_click.setBackgroundResource(R.drawable.background_btn_erreur);
 
                             }else {
-                                Toast.makeText(playActivity.this , "correct",Toast.LENGTH_LONG).show();
+                                Toast.makeText(playActivity.this , "правильно",Toast.LENGTH_LONG).show();
                                 btn_click.setBackgroundResource(R.drawable.background_btn_correct);
 
                                 scorePlayer++;
@@ -78,7 +90,7 @@ public class playActivity extends AppCompatActivity {
 
                                 }else {
                                     Intent intent  = new Intent(playActivity.this , ResulteActivity.class);
-                                    intent.putExtra("Resute" , scorePlayer);
+                                    intent.putExtra("Result" , scorePlayer);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -86,7 +98,7 @@ public class playActivity extends AppCompatActivity {
                             },2000);
 
                         }else {
-                            Toast.makeText(playActivity.this ,  "Vous devez en choisir un",Toast.LENGTH_LONG).show();
+                            Toast.makeText(playActivity.this ,  "выберите ответ",Toast.LENGTH_LONG).show();
                         }
                 }
         );
