@@ -15,7 +15,7 @@ public class ResulteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resulte);
         textView = findViewById(R.id.textView);
         int score = getIntent().getIntExtra("Result",0);
-        textView.setText("Score : " + score);
+        textView.setText("Баллы : " + score);
 
         findViewById(R.id.btn_restart).setOnClickListener(
                 restart->{
