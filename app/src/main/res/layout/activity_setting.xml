@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="347dp"
-        android:layout_height="672dp"
-        android:textSize="37dp"
+        android:layout_width="325dp"
+        android:layout_height="540dp"
         android:text="Это игра где вам задают вопросы про Армению Вы должны на них отвечать у вас будут четыре варианта ответа на один вопрос один из них правильный А три из них неправильные в соответствии от вашего ответа вы в конце получаете баллы."
         android:textColor="#F8F3F3"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
