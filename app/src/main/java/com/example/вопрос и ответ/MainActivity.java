@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
     public void main_btn(View view) {
         switch (view.getId()){
             case R.id.btn_play:
-                startActivity(new Intent(MainActivity.this , playActivity.class));
+                startActivity(new Intent(MainActivity.this , com.example.quizapp.playActivity.class));
                 break;
             case R.id.btn_setting:
-                startActivity(new Intent(MainActivity.this , settingActivity.class));
+                startActivity(new Intent(MainActivity.this , com.example.quizapp.settingActivity.class));
 
                 break;
             case R.id.btn_exit:
