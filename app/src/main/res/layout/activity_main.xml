@@ -36,12 +36,12 @@
             android:id="@+id/btn_play"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
-            android:backgroundTint="#03A9F4"
+            android:background="@color/white"
+            android:backgroundTint="#0A0B0B"
             android:onClick="main_btn"
             android:padding="8dp"
             android:text="Играть"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -51,12 +51,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/black"
-            android:backgroundTint="#03A9F4"
+            android:backgroundTint="#0A0B0B"
             android:onClick="main_btn"
             android:padding="8dp"
-            android:text="Что за игра"
+            android:text="Об игре"
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -66,12 +66,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/black"
-            android:backgroundTint="#03A9F4"
+            android:backgroundTint="#0A0B0B"
             android:onClick="main_btn"
             android:padding="8dp"
             android:text="Выйти"
 
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>

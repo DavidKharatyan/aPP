@@ -25,8 +25,8 @@ public class playActivity extends AppCompatActivity {
     String[] choose_list = {"IV век н.э."," V век до н.э.","II век н.э."," VI век до н.э.",
             " Тигран II Великий","Ардавазд I","Гаятон I","Харадзман I",
             "Тбилиси","Ереван","Баку","Астрахань",
-            " Анкар"," Вишап","Эчмиадзин"," Хачкар",
-            "Вторжение Сассанидов","Война за независимость","Массовые аресты армянских лидеров"," Политика истребления Османской империи",
+            " Анкар"," Вишап","Эчмиадзин","Хачкар",
+            "Вторжение Сассанидов","Война за независимость","Массовые аресты армянских лидеров","Политика истребления Османской империи",
             "Гайус Юлий Ахиллес","Григорий Просвещенный","Месроп Маштоц","Константин Философ",
             "1915"," 1918","1920","1923",
            "Распад Советского Союза","Признание независимости Азербайджана","Армянское национальное восстание","Конфликт между армянами и азербайджанцами на границе",
@@ -34,11 +34,11 @@ public class playActivity extends AppCompatActivity {
             "301 год","451 год","632 год","825 год",
             "1","2","4","5","6","7","8","9","10"
     };
-    String[] correct_list = {"V век н.э.","Гаятон I","Ереван","Хачкар","Политика истребления Османской империи"," Месроп Маштоц"," 1918","Распад Советского Союза","Война с Парфянами","301 год","10"};
+    String[] correct_list = {"IV век н.э.","Гаятон I","Ереван","Хачкар","Политика истребления Османской империи","Месроп Маштоц"," 1918","Распад Советского Союза","Война с Парфянами","301 год","10"};
 
 
     TextView cpt_question , text_question;
-    Button btn_choose1 , btn_choose2 , btn_choose3 , btn_choose4 , btn_next;
+    Button btn_choose1 , btn_choose2 , btn_choose3 , btn_choose4 , btn_next,check1;
 
 
     int currentQuestion =  0  ;
@@ -58,6 +58,8 @@ public class playActivity extends AppCompatActivity {
         btn_choose3 = findViewById(R.id.btn_choose3);
         btn_choose4 = findViewById(R.id.btn_choose4);
         btn_next = findViewById(R.id.btn_next);
+        check1 = findViewById(R.id.check1);
+
 
         findViewById(R.id.image_back).setOnClickListener(
                 a-> finish()
@@ -68,34 +70,21 @@ public class playActivity extends AppCompatActivity {
                         if (isclickBtn){
                             isclickBtn = false;
 
-                            if(!valueChoose.equals(correct_list[currentQuestion])){
-                                Toast.makeText(playActivity.this , "неправильно",Toast.LENGTH_LONG).show();
-                                btn_click.setBackgroundResource(R.drawable.background_btn_erreur);
-
-                            }else {
-                                Toast.makeText(playActivity.this , "правильно",Toast.LENGTH_LONG).show();
-                                btn_click.setBackgroundResource(R.drawable.background_btn_correct);
-
                                 scorePlayer++;
-                            }
                             new Handler().postDelayed(() -> {
                                 if(currentQuestion!=question_list.length-1){
                                     currentQuestion = currentQuestion + 1;
                                     remplirData();
                                     valueChoose = "";
-                                    btn_choose1.setBackgroundResource(R.drawable.background_btn_choose);
-                                    btn_choose2.setBackgroundResource(R.drawable.background_btn_choose);
-                                    btn_choose3.setBackgroundResource(R.drawable.background_btn_choose);
-                                    btn_choose4.setBackgroundResource(R.drawable.background_btn_choose);
 
-                                }else {
+                                }if (valueChoose.equals(correct_list[currentQuestion])){
                                     Intent intent  = new Intent(playActivity.this , ResulteActivity.class);
                                     intent.putExtra("Result" , scorePlayer);
                                     startActivity(intent);
                                     finish();
                                 }
 
-                            },2000);
+                            },1);
 
                         }else {
                             Toast.makeText(playActivity.this ,  "выберите ответ",Toast.LENGTH_LONG).show();
@@ -103,6 +92,38 @@ public class playActivity extends AppCompatActivity {
                 }
         );
 
+        check1.setOnClickListener(
+                view -> {
+                    if (isclickBtn){
+                        isclickBtn = false;
+
+                        if(!valueChoose.equals(correct_list[currentQuestion])){
+                            Toast.makeText(playActivity.this , "неправильно",Toast.LENGTH_LONG).show();
+                            btn_click.setBackgroundResource(R.drawable.background_btn_erreur);
+
+                        }else {
+                            Toast.makeText(playActivity.this , "правильно",Toast.LENGTH_LONG).show();
+                            btn_click.setBackgroundResource(R.drawable.background_btn_correct);
+
+                            scorePlayer++;
+                        }
+                        new Handler().postDelayed(() -> {
+                            if(currentQuestion!=question_list.length-1){
+                                currentQuestion = currentQuestion + 1;
+                                remplirData();
+                                valueChoose = "";
+                                btn_choose1.setBackgroundResource(R.drawable.background_btn_choose);
+                                btn_choose2.setBackgroundResource(R.drawable.background_btn_choose);
+                                btn_choose3.setBackgroundResource(R.drawable.background_btn_choose);
+                                btn_choose4.setBackgroundResource(R.drawable.background_btn_choose);
+
+                            }
+
+                        },1);
+
+                    }
+                }
+        );
 
     }
 
