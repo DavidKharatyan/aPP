@@ -84,7 +84,7 @@ public class playActivity extends AppCompatActivity {
                                     finish();
                                 }
 
-                            },1);
+                            },1000);
 
                         }else {
                             Toast.makeText(playActivity.this ,  "выберите ответ",Toast.LENGTH_LONG).show();
@@ -119,7 +119,7 @@ public class playActivity extends AppCompatActivity {
 
                             }
 
-                        },1);
+                        },1000);
 
                     }
                 }
