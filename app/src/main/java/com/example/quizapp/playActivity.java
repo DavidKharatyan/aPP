@@ -68,26 +68,20 @@ public class playActivity extends AppCompatActivity {
         btn_next.setOnClickListener(
                 view -> {
                         if (isclickBtn){
-                            isclickBtn = false;
-
+                            isclickBtn = true;
                                 scorePlayer++;
                             new Handler().postDelayed(() -> {
                                 if(currentQuestion!=question_list.length-1){
-                                    currentQuestion = currentQuestion + 1;
                                     remplirData();
                                     valueChoose = "";
 
                                 }if (valueChoose.equals(correct_list[currentQuestion])){
                                     Intent intent  = new Intent(playActivity.this , ResulteActivity.class);
                                     intent.putExtra("Result" , scorePlayer);
-                                    startActivity(intent);
-                                    finish();
                                 }
 
                             },1000);
 
-                        }else {
-                            Toast.makeText(playActivity.this ,  "выберите ответ",Toast.LENGTH_LONG).show();
                         }
                 }
         );
@@ -98,14 +92,13 @@ public class playActivity extends AppCompatActivity {
                         isclickBtn = false;
 
                         if(!valueChoose.equals(correct_list[currentQuestion])){
-                            Toast.makeText(playActivity.this , "неправильно",Toast.LENGTH_LONG).show();
+                            Toast.makeText(playActivity.this , "",Toast.LENGTH_LONG).show();
                             btn_click.setBackgroundResource(R.drawable.background_btn_erreur);
 
                         }else {
-                            Toast.makeText(playActivity.this , "правильно",Toast.LENGTH_LONG).show();
+                            Toast.makeText(playActivity.this , "",Toast.LENGTH_LONG).show();
                             btn_click.setBackgroundResource(R.drawable.background_btn_correct);
 
-                            scorePlayer++;
                         }
                         new Handler().postDelayed(() -> {
                             if(currentQuestion!=question_list.length-1){
