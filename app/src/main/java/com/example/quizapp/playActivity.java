@@ -11,30 +11,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class playActivity extends AppCompatActivity {
-    String[] question_list = {"Когда произошло рождение христианства в Армении?",
-            "Кто был основателем древнейшей армянской династии?"
+    String[] question_list = {"Какая горная вершина является самой высокой на территории Армении?",
+            "Какая главная религия преобладает в Армении?"
             ,"Как называется столица Армении?",
-           "Какая горная система охватывает большую часть территории Армении?",
-            "Какое событие привело к великой катастрофе армянского народа в начале XX века, известное как \"Армянский геноцид\"?",
-            "Кто был основателем армянского алфавита в V веке н.э.?",
-            "В каком году было провозглашено независимое государство Армения после развала Российской империи?",
-            "Какое событие привело к началу Нагорно-Карабахского конфликта в конце XX века?",
-            "Какое событие привело к завоеванию Завоевания Селевкидов армянским вождем Тиграном II в I веке до н.э.?",
-            "Когда была принята христианская религия как государственная религия в Армении?"
+            "Какое озеро является крупнейшим в Армении?",
+            "Какой год является годом независимости Армении от СССР?"
+            ,"Какой вид спорта является национальным в Армении?"
+            ,"Какой государственный праздник отмечается в Армении 21 сентября?"
+            ,"Какая является национальной валютой Армении?"
+            ,"Какой армянский поэт считается национальным героем?",
+            "Какой символ обычно ассоциируется с Арменией?"
     };
-    String[] choose_list = {"IV век н.э."," V век до н.э.","II век н.э."," VI век до н.э.",
-            " Тигран II Великий","Ардавазд I","Гаятон I","Харадзман I",
+    String[] choose_list = {"Арарат","Арарат (Восточный)"," Гегам","Арагац",
+            "Ислам","Христианство","Буддизм","Иудаизм",
             "Тбилиси","Ереван","Баку","Астрахань",
-            " Анкар"," Вишап","Эчмиадзин","Хачкар",
-            "Вторжение Сассанидов","Война за независимость","Массовые аресты армянских лидеров","Политика истребления Османской империи",
-            "Гайус Юлий Ахиллес","Григорий Просвещенный","Месроп Маштоц","Константин Философ",
-            "1915"," 1918","1920","1923",
-           "Распад Советского Союза","Признание независимости Азербайджана","Армянское национальное восстание","Конфликт между армянами и азербайджанцами на границе",
-            "Вторжение римлян","Восстание рабов","Война с Парфянами","Падение македонской династии",
-            "301 год","451 год","632 год","825 год",
+            "Ваннецкое озеро","Парз","Севанское озеро","Карс",
+            "1991","1992","1990","1993",
+            "Футбол","Теннис","Шахматы","борьба «Кох»",
+            "День Армии","День Конституции","День Независимости","День Независимости Города Ереван",
+            "Доллар США","Евро","Рубль","Драм",
+            "Ованес Туманян ","Гарегин Нжде","Авдет Исмаил","Мосес Хоренаци",
+            "Лев","Солнце","Крест","Огонь",
             "1","2","4","5","6","7","8","9","10"
     };
-    String[] correct_list = {"IV век н.э.","Гаятон I","Ереван","Хачкар","Политика истребления Османской империи","Месроп Маштоц"," 1918","Распад Советского Союза","Война с Парфянами","301 год","10"};
+    String[] correct_list = {"Арагац","Христианство","Ереван","Севанское озеро","1991","борьба «Кох»","День Независимости","Драм","Ованес Туманян ","Крест","10"};
 
 
     TextView cpt_question , text_question;
@@ -62,62 +62,57 @@ public class playActivity extends AppCompatActivity {
 
 
         findViewById(R.id.image_back).setOnClickListener(
-                a-> finish()
+                a -> finish()
         );
         remplirData();
-        btn_next.setOnClickListener(
-                view -> {
-                        if (isclickBtn){
-                            isclickBtn = true;
-                                scorePlayer++;
-                            new Handler().postDelayed(() -> {
-                                if(currentQuestion!=question_list.length-1){
-                                    remplirData();
-                                    valueChoose = "";
-
-                                }if (valueChoose.equals(correct_list[currentQuestion])){
-                                    Intent intent  = new Intent(playActivity.this , ResulteActivity.class);
-                                    intent.putExtra("Result" , scorePlayer);
-                                }
-
-                            },1000);
-
-                        }
+        btn_next.setOnClickListener(view -> {
+            new Handler().postDelayed(() -> {
+                // Check if the user has selected an answer
+                if (valueChoose.isEmpty()) {
+                    Toast.makeText(playActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-        );
+
+                if (currentQuestion != question_list.length - 1) {
+                    currentQuestion = currentQuestion + 1;
+                    remplirData();
+                    valueChoose = "";
+                    btn_choose1.setBackgroundResource(R.drawable.background_btn_choose);
+                    btn_choose2.setBackgroundResource(R.drawable.background_btn_choose);
+                    btn_choose3.setBackgroundResource(R.drawable.background_btn_choose);
+                    btn_choose4.setBackgroundResource(R.drawable.background_btn_choose);
+                } else {
+                    Intent intent = new Intent(playActivity.this, ResulteActivity.class);
+                    intent.putExtra("Result", scorePlayer);
+                    startActivity(intent);
+                    finish();
+                }
+
+            }, 200);
+        });
 
         check1.setOnClickListener(
                 view -> {
-                    if (isclickBtn){
+                    if (isclickBtn) {
                         isclickBtn = false;
 
-                        if(!valueChoose.equals(correct_list[currentQuestion])){
-                            Toast.makeText(playActivity.this , "",Toast.LENGTH_LONG).show();
+                        if (!valueChoose.equals(correct_list[currentQuestion])) {
+
+                            Toast.makeText(playActivity.this, "Incorrect. Correct answer is: " + correct_list[currentQuestion], Toast.LENGTH_LONG).show();
                             btn_click.setBackgroundResource(R.drawable.background_btn_erreur);
+                        } else {
 
-                        }else {
-                            Toast.makeText(playActivity.this , "",Toast.LENGTH_LONG).show();
+                            Toast.makeText(playActivity.this, "Correct", Toast.LENGTH_LONG).show();
                             btn_click.setBackgroundResource(R.drawable.background_btn_correct);
-
+                            scorePlayer++;
                         }
-                        new Handler().postDelayed(() -> {
-                            if(currentQuestion!=question_list.length-1){
-                                currentQuestion = currentQuestion + 1;
-                                remplirData();
-                                valueChoose = "";
-                                btn_choose1.setBackgroundResource(R.drawable.background_btn_choose);
-                                btn_choose2.setBackgroundResource(R.drawable.background_btn_choose);
-                                btn_choose3.setBackgroundResource(R.drawable.background_btn_choose);
-                                btn_choose4.setBackgroundResource(R.drawable.background_btn_choose);
 
-                            }
 
-                        },1000);
-
+                    } else {
+                        Toast.makeText(playActivity.this, "Enter the answer", Toast.LENGTH_LONG).show();
                     }
                 }
         );
-
     }
 
     void remplirData(){
