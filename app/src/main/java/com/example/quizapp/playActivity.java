@@ -38,9 +38,10 @@ public class playActivity extends AppCompatActivity {
 
 
     TextView cpt_question , text_question;
-    Button btn_choose1 , btn_choose2 , btn_choose3 , btn_choose4 , btn_next,check1;
+    Button btn_choose1 , btn_choose2 , btn_choose3 , btn_choose4 , btn_next,check1 ;
 
-
+    private boolean checked = false;
+    private boolean questionAnswered = false;
     int currentQuestion =  0  ;
     int scorePlayer =  0  ;
     boolean isclickBtn = false;
@@ -67,7 +68,6 @@ public class playActivity extends AppCompatActivity {
         remplirData();
         btn_next.setOnClickListener(view -> {
             new Handler().postDelayed(() -> {
-                // Check if the user has selected an answer
                 if (valueChoose.isEmpty()) {
                     Toast.makeText(playActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
                     return;
@@ -111,9 +111,11 @@ public class playActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(playActivity.this, "Enter the answer", Toast.LENGTH_LONG).show();
                     }
+
                 }
         );
     }
+
 
     void remplirData(){
         cpt_question.setText((currentQuestion+1) + "/" + question_list.length);
@@ -139,8 +141,7 @@ public class playActivity extends AppCompatActivity {
 
 
     }
-    void chooseBtn(){
-
+    void chooseBtn() {
         btn_click.setBackgroundResource(R.drawable.background_btn_choose_color);
         isclickBtn = true;
         valueChoose = btn_click.getText().toString();
