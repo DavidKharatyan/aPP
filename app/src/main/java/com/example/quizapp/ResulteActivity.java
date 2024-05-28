@@ -14,12 +14,12 @@ public class ResulteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resulte);
         textView = findViewById(R.id.textView);
-        int score = getIntent().getIntExtra("Result",0);
+        int score = getIntent().getIntExtra("результат",0);
         textView.setText("Баллы : " + score);
 
         findViewById(R.id.btn_restart).setOnClickListener(
                 restart->{
-                    Intent intent  = new Intent(ResulteActivity.this , com.example.quizapp.MainActivity.class);
+                    Intent intent  = new Intent(ResulteActivity.this ,MainActivity.class);
                     startActivity(intent);
                     finish();
                 }

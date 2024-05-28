@@ -81,9 +81,14 @@ public class playActivity extends AppCompatActivity {
                     btn_choose2.setBackgroundResource(R.drawable.background_btn_choose);
                     btn_choose3.setBackgroundResource(R.drawable.background_btn_choose);
                     btn_choose4.setBackgroundResource(R.drawable.background_btn_choose);
+                    btn_choose1.setEnabled(true);
+                    btn_choose2.setEnabled(true);
+                    btn_choose3.setEnabled(true);
+                    btn_choose4.setEnabled(true);
+                    btn_next.setEnabled(true);
                 } else {
                     Intent intent = new Intent(playActivity.this, ResulteActivity.class);
-                    intent.putExtra("Result", scorePlayer);
+                    intent.putExtra("результат", scorePlayer);
                     startActivity(intent);
                     finish();
                 }
@@ -98,18 +103,32 @@ public class playActivity extends AppCompatActivity {
 
                         if (!valueChoose.equals(correct_list[currentQuestion])) {
 
-                            Toast.makeText(playActivity.this, "Incorrect. Correct answer is: " + correct_list[currentQuestion], Toast.LENGTH_LONG).show();
+                            Toast.makeText(playActivity.this, "неправильно. правильный ответ: " + correct_list[currentQuestion], Toast.LENGTH_LONG).show();
                             btn_click.setBackgroundResource(R.drawable.background_btn_erreur);
+
+                            btn_choose1.setEnabled(false);
+                            btn_choose2.setEnabled(false);
+                            btn_choose3.setEnabled(false);
+                            btn_choose4.setEnabled(false);
+                            btn_next.setEnabled(true);
+
                         } else {
 
-                            Toast.makeText(playActivity.this, "Correct", Toast.LENGTH_LONG).show();
+                            Toast.makeText(playActivity.this, "правильно", Toast.LENGTH_LONG).show();
                             btn_click.setBackgroundResource(R.drawable.background_btn_correct);
                             scorePlayer++;
+
+                            btn_choose1.setEnabled(false);
+                            btn_choose2.setEnabled(false);
+                            btn_choose3.setEnabled(false);
+                            btn_choose4.setEnabled(false);
+                            btn_next.setEnabled(true);
+
                         }
 
 
                     } else {
-                        Toast.makeText(playActivity.this, "Enter the answer", Toast.LENGTH_LONG).show();
+                        Toast.makeText(playActivity.this, "Введите ответ", Toast.LENGTH_LONG).show();
                     }
 
                 }
@@ -126,6 +145,11 @@ public class playActivity extends AppCompatActivity {
         btn_choose3.setText(choose_list[4 * currentQuestion+2]);
         btn_choose4.setText(choose_list[4 * currentQuestion+3]);
 
+        btn_choose1.setEnabled(true);
+        btn_choose2.setEnabled(true);
+        btn_choose3.setEnabled(true);
+        btn_choose4.setEnabled(true);
+        btn_next.setEnabled(true);
     }
 
     public void ClickChoose(View view) {
@@ -136,6 +160,12 @@ public class playActivity extends AppCompatActivity {
             btn_choose2.setBackgroundResource(R.drawable.background_btn_choose);
             btn_choose3.setBackgroundResource(R.drawable.background_btn_choose);
             btn_choose4.setBackgroundResource(R.drawable.background_btn_choose);
+            btn_choose1.setEnabled(true);
+            btn_choose2.setEnabled(true);
+            btn_choose3.setEnabled(true);
+            btn_choose4.setEnabled(true);
+            btn_next.setEnabled(true);
+
         }
         chooseBtn();
 
@@ -143,7 +173,14 @@ public class playActivity extends AppCompatActivity {
     }
     void chooseBtn() {
         btn_click.setBackgroundResource(R.drawable.background_btn_choose_color);
+        btn_choose1.setEnabled(false);
+        btn_choose2.setEnabled(false);
+        btn_choose3.setEnabled(false);
+        btn_choose4.setEnabled(false);
+        btn_next.setEnabled(false);
         isclickBtn = true;
         valueChoose = btn_click.getText().toString();
+
+
     }
 }
